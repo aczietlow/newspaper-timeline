@@ -1,0 +1,322 @@
+$mmnAqua: rgb(34,182,203);
+
+*{
+	margin:0;
+	padding:0;
+	}
+body {
+	background: #000;
+}
+
+.container {
+	margin: 0 auto;
+	overflow: auto;
+	width: 90%;
+	max-width: 960px;
+}
+
+.timelineContainer{
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100%;
+	.timelineControls{
+		position: relative;
+		top: 5em;
+		z-index: 999;
+		a{
+			background: darken($mmnAqua,10%);
+			color: #fff;
+			padding: 10px;
+			text-decoration: none;
+			&.btnPrevious{
+				float: left;
+				margin-right: -35px;
+			}
+			&.btnNext{
+				float: right;
+				margin-left: -35px;
+			}
+			&:hover{
+				background: #c00;
+				-webkit-transition: all 0.25s ease;
+				-moz-transition: all 0.25s ease;
+				-o-transition: all 0.25s ease;
+				transition: all 0.25s ease;
+			}
+		}
+	}
+	.timelineWrapper{
+		overflow: hidden;
+	}
+	
+	// Timeline Selector
+	ol.timelineSelector{
+		background: #999;
+		-webkit-border-bottom-right-radius: 10px;
+		-webkit-border-bottom-left-radius: 10px;
+		-moz-border-radius-bottomright: 10px;
+		-moz-border-radius-bottomleft: 10px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		color: #fff;
+		font: normal 10px/1 sans-serif;
+		margin: 0 auto;
+		overflow: auto;
+		padding: 0 10px;
+		position: relative;
+		text-align: center;
+		width: 75%;
+		z-index: 10;
+		li{
+			display: inline-block;
+			_float: left; // Stupid IE
+			a {
+				color: #fff;
+				display: block;
+				padding: 10px 15px;
+				text-decoration: none;
+				&:hover{
+					background: #aaa;
+					font-weight: bold;
+				}
+				&.selected{
+					background: #c00;
+					font-weight: bold;
+				}
+			}
+			&.prev,
+			&.next{
+				color: #000;
+				display: none;
+				padding: 10px;
+			}
+			
+			&.disabled{
+				display: none;
+			}
+		}
+	}
+	ol.timelineSlider{
+		float: left;
+		height: 200px;
+		list-style: none;
+		margin: 0 -100% 0 0;
+		overflow: hidden;
+		padding: 0;
+		text-indent: 0;
+		li{
+			background: #fff;
+			float: left;
+			height: 200px;
+			overflow: auto;
+			padding: 0 0 30px 0;
+			position: relative;
+			width: 200px;
+			-webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+			.image{
+				display: block;
+				margin: 0 0 -5px;
+				padding: 0;
+				img{
+					width: 100%;
+				}
+				.caption{
+					display: none;
+				}
+			}
+			.text{
+				
+				margin: 0;
+				overflow: auto;
+				padding: 10px;
+				h5.title{
+					color: #777;
+					font: normal 14px/1 sans-serif;
+					margin: 0 0 .5em;
+				}
+				h6.date{
+					font: bold 10px/1 sans-serif;
+					margin: 0 0 .25em;
+				}
+				p.desc{
+					color: #999;
+					display: none;
+					font: normal 11px/1.4 sans-serif;
+				}
+			}
+			&:nth-child(even){
+				background: #eee;
+			}
+			&.active{
+				background: $mmnAqua;
+				margin: 0;
+				padding: 0;
+				width: 500px;
+				z-index: 200;
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+				.image{
+					background: darken($mmnAqua,10);
+					display: block;
+					float: left;
+					height: 200px;
+					overflow: hidden;
+					position: relative;
+					text-align: center;
+					width: 40%;
+					
+					img {
+						display: block;
+						margin: -10% -50% 0;
+						width: 400px;
+					}
+					.caption{
+						background: rgba(0,0,0,.5);
+						bottom: 0;
+						color: #fff;
+						display: block;
+						font: normal 8px/1 sans-serif;
+						margin: -2em 0 0;
+						padding: 2%;
+						position: absolute;
+						text-align: right;
+						text-transform: uppercase;
+						width: 97%;
+					}
+				}
+				.text{
+					color: #fff;
+					padding: 20px 50px 10px 10px;
+					h5.title{
+						color: #fff;
+					}
+					h6.date{
+						color: #fff;
+						padding: .25em 0 0;
+					}
+					p.desc{
+						clear: both;
+						color: #fff;
+						display: block;
+					}
+				}
+			}
+			&:hover,
+			&:nth-child(even):hover{
+				background: darken($mmnAqua,20%);
+				color: #fff;
+				*{
+					color: #fff !important;
+				}
+			}	
+		}
+	}
+}
+
+// Media Queries for Responsive Designs
+
+	// ++ iPad - Landscape
+	@media screen and (max-width: 1024px) {
+		
+	}
+	
+	// ++ iPad - Portrait
+	@media screen and (max-width: 720px) {
+		.timelineContainer{
+			ol.timelineSlider{
+				li{
+				}
+			}
+			ol.timelineSelector{
+				-webkit-border-bottom-right-radius: 0;
+				-webkit-border-bottom-left-radius: 0;
+				-moz-border-radius-bottomright: 0;
+				-moz-border-radius-bottomleft: 0;
+				border-bottom-right-radius: 0;
+				border-bottom-left-radius: 0;
+				padding: 0;
+				width: 100%;
+				li{
+				}
+			}
+		}
+	}
+	
+	// ++ iPhone -- Landscape
+	@media screen and (max-width: 480px) {
+		.container{
+			width: 100%;
+			.timelineContainer{
+				ol.timelineSlider{
+					li{
+						overflow: hidden;
+						width: 100%;
+						max-width: 480px;
+						.image{
+							display: block;
+							height: 100px;
+							overflow: hidden;
+							width: 100%;
+							img{
+								display: block;
+								margin: -15% auto 0;
+								width: 100% !important;
+							}
+						}
+						&.active{
+							background: $mmnAqua;
+							margin: 0;
+							padding: 0;
+							width: 100%;
+							z-index: 200;
+							-webkit-transition: all 0.5s ease;
+							-moz-transition: all 0.5s ease;
+							-o-transition: all 0.5s ease;
+							transition: all 0.5s ease;
+							.image{
+								float: none;
+								height: 100px;
+								overflow: hidden;
+								width: 100%;
+								img {
+									display: block;
+									margin: 0 auto;
+									width: 100% !important;
+								}
+								.caption{
+									display: none;
+								}
+							}
+							.text{
+								color: #fff;
+								padding: 20px 50px 10px 10px;
+								h5.title{
+									color: #fff;
+								}
+								h6.date{
+									color: #fff;
+									padding: .25em 0 0;
+								}
+								p.desc{
+									clear: both;
+									color: #fff;
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	// ++ iPhone - Portrait
+	@media screen and (max-width: 720px) {
+	
+	}
