@@ -27,6 +27,8 @@ body {
 		a{
 			background: darken($mmnAqua,10%);
 			color: #fff;
+			-moz-opacity: .75;
+			opacity: .75;
 			padding: 10px;
 			text-decoration: none;
 			&.btnPrevious{
@@ -231,6 +233,9 @@ body {
 		.timelineContainer{
 			ol.timelineSlider{
 				li{
+					&.active{
+						max-width: 720px !important;
+					}
 				}
 			}
 			ol.timelineSelector{
@@ -253,9 +258,43 @@ body {
 		.container{
 			width: 100%;
 			.timelineContainer{
+			
+				// Slider Controls
+				
+				.timelineControls{
+					position: relative;
+					top: 0;
+					z-index: 999;
+					a{
+						background: darken($mmnAqua,10%);
+						color: #fff;
+						height: 250px;
+						padding: 5px;
+						text-decoration: none;
+						vertical-align: middle;
+						&.btnPrevious{
+							float: left;
+							margin-right: 0;
+						}
+						&.btnNext{
+							float: right;
+							margin-left: 0;
+						}
+						&:hover{
+							background: #c00;
+							-webkit-transition: all 0.25s ease;
+							-moz-transition: all 0.25s ease;
+							-o-transition: all 0.25s ease;
+							transition: all 0.25s ease;
+						}
+					}
+				} // .timelineControls
+			
+				// Slider
 				ol.timelineSlider{
+					height: 250px;
 					li{
-						overflow: visible;
+						overflow: hidden;
 						width: 100%;
 						max-width: 480px;
 						.image{
@@ -308,10 +347,11 @@ body {
 									color: #fff;
 									display: block;
 								}
-							}
-						}
-					}
-				}
+							} //.text
+						} // li
+					} // ol.timelineSlider
+					
+				} // .timelineContainer
 			}
 		}
 	}

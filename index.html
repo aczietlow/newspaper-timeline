@@ -187,7 +187,7 @@
 			
 			// Timeline Controls
 			$('.timelineControls a.btnPrevious').click(function () { 
-				var leftPos = $('.timelineWrapper').scrollLeft();
+				var leftPos = $('.timelineWrapper').each().scrollLeft();
 				$('.timelineWrapper').animate({scrollLeft: leftPos - 200}, 800);
 			});
 			$('.timelineControls a.btnNext').click(function () { 
