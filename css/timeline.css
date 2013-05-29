@@ -188,7 +188,7 @@ body {
   .container {
     width: 100%; }
     .container .timelineContainer ol.timelineSlider li {
-      overflow: hidden;
+      overflow: visible;
       width: 100%;
       max-width: 480px; }
       .container .timelineContainer ol.timelineSlider li .image {

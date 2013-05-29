@@ -255,7 +255,7 @@ body {
 			.timelineContainer{
 				ol.timelineSlider{
 					li{
-						overflow: hidden;
+						overflow: visible;
 						width: 100%;
 						max-width: 480px;
 						.image{
